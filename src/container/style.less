@@ -1,12 +1,12 @@
 article {
   display: flex;
   flex-flow: column wrap;
-  h1 { font-size: 1.34em; }
-  h2 { font-size: 1.17em; }
+  h1 { font-size: 1.80em; color: teal; &::before{ content: "# ";}}
+  h2 { font-size: 1.34em; color: teal; }
 }
 .selector-wrapper {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 .selector {
   padding-right: 20px;
@@ -18,4 +18,10 @@ article {
     margin-left: 10px;
     font-size: 1.5em;
   }
+}
+.running {
+  color: #FB7
+}
+.error {
+  color: darkred
 }

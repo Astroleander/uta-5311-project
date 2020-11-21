@@ -2,6 +2,7 @@ import { swap } from "@/utils/utils";
 
 export default function bubbleSort(arr) {
   let swapped = true;
+  /** no swapping happened => ordered */
   while (swapped){
     swapped = false;
     for (let i = 0; i < arr.length - 1; i++) {

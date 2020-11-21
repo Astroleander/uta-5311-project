@@ -22,6 +22,7 @@ export default function Selector({ onSelectedChanged }) {
   }, [checkedList]);
   return (
     <section className={"selector-wrapper"}>
+    <h1 style={{width: "100%"}}>Selectors</h1>
       {
       Array.from(route.keys()).map(
         algo => 

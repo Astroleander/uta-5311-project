@@ -15,20 +15,30 @@ export default function Container({ path, input, name }) {
 
   const [runtime, setStart, setEnd] = useTimer();
   const [result, setResult] = useState<number[]>();
+  const [err, setErr] = useState<string>(null);
   useEffect(() => {
     import('../code/' + path).then(module => {
+      setErr(null)
       let func = module.default;
-      let args = JSON.parse(JSON.stringify(input))
+      let args = [].concat(input)
       setStart(performance.now());
       let res = func(args);
       setEnd(performance.now());
       setResult(res);
+    }).catch(e => {
+      setErr(e)
     })
   }, [input]);
+  if (err) {
+    return <section>
+      <h2 className="error">{name}</h2>
+      {String(err)}
+    </section>
+  }
   return (
     <section>
       <h2>{name}</h2>
-      <div>{runtime}</div>
+      <div><strong>Runtime: </strong>{runtime.toFixed(4)} ms</div>
       {result && <div><code>{String(result)}</code></div>}
     </section>
   )

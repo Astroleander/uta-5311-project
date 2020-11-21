@@ -6,7 +6,7 @@ import Selector from './Selector';
 import './style.less';
 
 export default function App() {
-  const [input, setInput] = useState(() => new Array(5).fill(0).map(() => ~~(200 * Math.random())));
+  const [input, setInput] = useState<number[]>(null);
   const [selected, setSelected] = useState<Map<string,string>|null>(null);
   const onInputChanged = (newInput) => {
     setInput(newInput);
@@ -16,7 +16,7 @@ export default function App() {
   }
   return (
     <article>
-      <Input input={input} onInputChanged={onInputChanged} />
+      <Input    onInputChanged={onInputChanged} />
       <Selector onSelectedChanged={onSelectedChanged}/>
       <Output input={input} selected={selected} />
     </article>
