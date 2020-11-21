@@ -1,7 +1,7 @@
 const merge = (left_arr, right_arr) => {
+  /** using pointer is far more complex */
   let merge = [], left = 0, right = 0;
 
-  // We will concatenate values into the resultArray in order
   while (left < left_arr.length && right < right_arr.length) {
     if (left_arr[left] < right_arr[right]) {
       merge.push(left_arr[left]);

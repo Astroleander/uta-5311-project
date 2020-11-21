@@ -3,6 +3,7 @@ import { swap } from "@/utils/utils";
 const quicksort = (arr, low, high) => {
   if (high - low < 1) return;
 
+  /** partition by arr[high] as pivot value */
   const pivot_value = arr[high];
   let pivot = low;
 
