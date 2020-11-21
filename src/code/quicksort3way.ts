@@ -1,7 +1,7 @@
 import { swap } from "@/utils/utils";
 
 const quicksort = (arr, low, high) => {
-  console.log(arr, arr.slice(low, high + 1))
+  // console.log(arr, arr.slice(low, high + 1))
   if (high - low < 1) return;
 
   const pivot_value = arr[high];
@@ -21,7 +21,7 @@ const quicksort = (arr, low, high) => {
    */
 
   for (let i = low; i < p_high;) {
-    console.log(arr)
+    // console.log(arr)
     // console.table({
     //   undo: String(arr.slice(i, p_high)),
     //   pivot: String(arr[high]),
